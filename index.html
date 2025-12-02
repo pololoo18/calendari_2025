@@ -129,35 +129,57 @@
 <body>
   <div id="box">
     <h2>Benvinguda 🩵</h2>
-    <p class="footer-note">Introdueix la contrasenya secreta</p>
+    <p class="footer-note">Introdueix les credencials</p>
 
-    <input id="pass" type="password" placeholder="Contrasenya">
-    <button onclick="check()">Entrar</button>
+    <form id="loginForm">
+        <input id="email" type="email" placeholder="Correu" required>
+        <input id="password" type="password" placeholder="Contrasenya" required>
+        <button type="submit">Entrar</button>
+    </form>
 
     <p id="msg">Contrasenya incorrecta</p>
   </div>
 
-  <script>
-    const psw = "nunnu"; // Cambia aquí tu contraseña
-    const MSG = document.getElementById("msg");
+  <script type="module">
+    // Importa Firebase App y Auth
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
 
-    // Si ya tiene acceso guardado → redirige al calendario
-    if (localStorage.getItem("adv_access") === "ok") {
-      window.location.href = "calendari.html";
-    }
+    // Configuración de Firebase
+    const firebaseConfig = {
+        apiKey: "AIzaSyBvnPO2REN-46e1ONWBYMiEJze6AtZcDoM",
+        authDomain: "calendari2025-f8b6b.firebaseapp.com",
+        projectId: "calendari2025-f8b6b",
+        storageBucket: "calendari2025-f8b6b.firebasestorage.app",
+        messagingSenderId: "409158586206",
+        appId: "1:409158586206:web:b63c10a856bef36bc0c9cf"
+    };
 
-    function check() {
-      const p = document.getElementById("pass").value.trim();
-      if (p === psw) {
-        localStorage.setItem("adv_access", "ok");
-        window.location.href = "calendari.html";
-      } else {
-        // Mostrar mensaje con fade
-        MSG.classList.remove("show");
-        void MSG.offsetWidth; // reinicia la animación
-        MSG.classList.add("show");
-      }
-    }
+    // Inicializar Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Formulario
+    const loginForm = document.getElementById('loginForm');
+    const errorDiv = document.getElementById('error');
+
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            window.location.href = "calendari.html";
+        })
+        .catch((error) => {
+            errorDiv.textContent = error.message;
+        });
+    });
   </script>
+</body>
+</html>
+
+
 </body>
 </html>

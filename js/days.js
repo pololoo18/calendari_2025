@@ -1,7 +1,7 @@
 // Configuración simple de los días: título corto + ruta relativa al juego
 // Rellena o modifica los campos "title" y "gamePath" según vayas creando /games/dayXX/
 export const DAYS = {
-  1: { title: "Memory", gamePath: "games/day01/index.html", hint: "---" },
+  1: { title: "Memory", gamePath: "games/day01/index.html", hint: "Val per un massatge" },
   2: { title: "Laberint",    gamePath: "games/day02/index.html", hint: "Mira la butxaca petita de la meva motxilla" },
   3: { title: "Copitos",      gamePath: "games/day03/index.html", hint: "---" },
   4: { title: "Salturriento",      gamePath: "games/day04/index.html", hint: "---" },

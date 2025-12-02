@@ -1,5 +1,33 @@
-if (localStorage.getItem("adv_access") !== "ok") {
-  window.location.href = "index.html";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBvnPO2REN-46e1ONWBYMiEJze6AtZcDoM",
+    authDomain: "calendari2025-f8b6b.firebaseapp.com",
+    projectId: "calendari2025-f8b6b",
+    storageBucket: "calendari2025-f8b6b.firebasestorage.app",
+    messagingSenderId: "409158586206",
+    appId: "1:409158586206:web:b63c10a856bef36bc0c9cf"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+// Esta función se ejecuta cada vez que cambia el estado de autenticación
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    // Si no hay usuario logueado, redirige al login
+    window.location.href = "index.html";
+  }
+});
+
+const logoutBtn = document.getElementById('logoutBtn');
+if(logoutBtn){
+  logoutBtn.addEventListener('click', () => {
+    signOut(auth).then(() => {
+      window.location.href = "index.html";
+    });
+  });
 }
 
 import { DAYS, CONFIG } from './days.js';
