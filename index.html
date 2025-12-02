@@ -138,7 +138,7 @@
   </div>
 
   <script>
-    const PASSWORD = "502017"; // Cambia aquí tu contraseña
+    const psw = "nunnu"; // Cambia aquí tu contraseña
     const MSG = document.getElementById("msg");
 
     // Si ya tiene acceso guardado → redirige al calendario
@@ -148,7 +148,7 @@
 
     function check() {
       const p = document.getElementById("pass").value.trim();
-      if (p === PASSWORD) {
+      if (p === psw) {
         localStorage.setItem("adv_access", "ok");
         window.location.href = "calendari.html";
       } else {
