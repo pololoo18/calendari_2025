@@ -177,7 +177,7 @@ function showFinish(day, hint){
   gameContent.innerHTML = `
     <div style="padding:18px;text-align:center">
       <h2>Molt bé! ❤️</h2>
-      <b><p style="color:var(--muted);margin:12px 0">PREMI: ${escapeHtml(hint)}</p>
+      <b><p style="color:var(--muted);margin:12px 0">PREMI/PISTA: ${escapeHtml(hint)}</p>
       <div style="display:flex;gap:10px;justify-content:center;margin-top:14px">
         <button class="btn" onclick="document.getElementById('closeOverlay').click()">Tornar al calendari</button>
       </div>
@@ -212,7 +212,7 @@ document.addEventListener('click', (ev)=>{
       const hint = DAYS[day]?.hint || '';
       showMessage(`
         <h2>${escapeHtml(info)}</h2>
-        <h3><small style="color:var(--muted)">${escapeHtml(hint)}</small></h3>
+        <h3>PREMI/PISTA: <small style="color:var(--muted)">${escapeHtml(hint)}</small></h3>
       `);
     }
   }
