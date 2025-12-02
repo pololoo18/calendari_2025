@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <link rel="icon" type="image/png" href="games/day05/heart.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calendario de Adviento — Para ella</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <h1>Calendari d'Advent</h1>
+      <p class="subtitle">Benvinguda al teu calendari d'advent del 2025, espero que t'agradi molt 🩵</p>
+    </header>
+
+    <section id="calendar" class="calendar" aria-label="Calendario de Adviento">
+      <!-- casillas se generan por JS -->
+    </section>
+
+    <footer class="footer">
+      <small>Fet amb ♥ pel teu maridito</small>
+    </footer>
+  </main>
+
+  <!-- overlay para cargar minijuegos -->
+  <div id="overlay" class="overlay hidden" role="dialog" aria-modal="true">
+    <div class="overlay-backdrop" id="overlayBackdrop"></div>
+    <div class="game-card" id="gameCard" role="document">
+      <button id="closeOverlay" class="close-btn" aria-label="Cerrar">✕</button>
+      <div id="gameContent" class="game-content" tabindex="0">
+        <!-- Aquí se inyecta el HTML del minijuego -->
+        <div class="loader">Cargando...</div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

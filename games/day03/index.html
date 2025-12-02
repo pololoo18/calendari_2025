@@ -1,0 +1,68 @@
+<style>
+.d03snow {
+  font-family: inherit;
+  color: var(--text);
+  text-align: center;
+}
+
+.d03snow h2 {
+  font-family: "Playfair Display", serif;
+  margin: 0 0 8px;
+}
+
+.d03snow .desc {
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.d03snow .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 50px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.d03snow .cell {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: #f0f7ff;
+  border: 2px solid #c6dfff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 22px;
+  transition: transform 0.15s, background 0.2s;
+}
+
+.d03snow .cell:active {
+  transform: scale(0.88);
+}
+
+.d03snow .correct {
+  background: #ffffff;
+  border-color: #9cc7ff;
+}
+
+.d03snow .wrong {
+  background: #ffd9d9;
+  border-color: #ff9e9e;
+}
+
+.d03snow .small {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+</style>
+
+<div class="d03snow" role="application">
+  <h2>Troba els 3 Copitos</h2>
+  <div class="desc">Només tres copitos son correctes. Descobreix-los!</div>
+
+  <div id="d03snowgrid" class="grid"></div>
+  
+  <div class="small">Al trobar-los, es mostrarà la pista.</div>
+</div>

@@ -1,0 +1,69 @@
+<style>
+.d06memory {
+  font-family: inherit;
+  color: var(--text);
+  text-align: center;
+}
+
+.d06memory h2 {
+  font-family: "Playfair Display", serif;
+  margin: 0 0 8px;
+}
+
+.d06memory .desc {
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.d06memory .board {
+  display: grid;
+  grid-template-columns: repeat(2, 100px);
+  grid-template-rows: repeat(2, 100px);
+  gap: 12px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.d06memory .color-btn {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.2s, filter 0.2s;
+  border: 2px solid rgba(0,0,0,0.1);
+}
+
+.d06memory .color-btn:active {
+  transform: scale(0.95);
+}
+
+.d06memory .c0 { background: #ff4d4d; }
+.d06memory .c1 { background: #4dd2ff; }
+.d06memory .c2 { background: #fff44d; }
+.d06memory .c3 { background: #4dff88; }
+
+.d06memory .flash {
+  transform: scale(1.2);
+  filter: brightness(2) saturate(1.5);
+  box-shadow: 0 0 30px 15px white;
+}
+
+.d06memory .small {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+</style>
+
+
+<div class="d06memory" role="application">
+  <h2>Simón diu</h2>
+  <div class="desc">Observa la seqüència i repeteix-la fent clic en els quadrats.</div>
+  <div class="board" id="d06board">
+    <div class="color-btn c0" data-id="0"></div>
+    <div class="color-btn c1" data-id="1"></div>
+    <div class="color-btn c2" data-id="2"></div>
+    <div class="color-btn c3" data-id="3"></div>
+  </div>
+  <div class="small">Al completar, veuràs la pista del dia 6.</div>
+</div>

@@ -1,0 +1,27 @@
+<style>
+.d09 h2{font-family:"Playfair Display",serif;margin:0}
+.d09 .board{width:320px;height:240px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;justify-content:center;margin:12px auto}
+.d09 .piece{
+  background:#faf6f5;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  cursor:pointer;
+  padding:0;
+  overflow:hidden;
+}
+.d09 .piece img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.d09 .small{color:var(--muted);text-align:center;margin-top:10px;font-size:13px}
+</style>
+
+<div class="d09">
+  <h2>Ordena els records</h2>
+  <p class="small">Ordena cronològicament les fotos del 1 al 6</p>
+  <div id="p09board" class="board" aria-live="polite"></div>
+</div>

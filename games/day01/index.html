@@ -1,0 +1,17 @@
+<!-- Este HTML será inyectado dentro del overlay -->
+<style>
+  .d01 {font-family:inherit;color:var(--text)}
+  .d01 h2{font-family:"Playfair Display",serif;margin:0 0 8px}
+  .d01 .desc{color:var(--muted);margin-bottom:12px}
+  .d01 .board{display:grid;grid-template-columns:repeat(3,72px);gap:10px;justify-content:center}
+  .d01 .card{width:72px;height:72px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#faf7f6;border:1px solid rgba(0,0,0,0.04);cursor:pointer;font-size:28px}
+  .d01 .card.open{background:var(--accent-2);color:#fff}
+  .d01 .small{margin-top:12px;color:var(--muted);font-size:13px;text-align:center}
+</style>
+
+<div class="d01" role="application">
+  <h2>Mini-Memory</h2>
+  <div class="desc">Troba les parelles.</div>
+  <div class="board" id="d01board" aria-live="polite"></div>
+  <div class="small">Al completar, veuràs on està la pista.</div>
+</div>

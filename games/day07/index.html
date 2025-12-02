@@ -1,0 +1,82 @@
+<style>
+.d07sudoku {
+  font-family: inherit;
+  color: var(--text);
+  text-align: center;
+}
+
+.d07sudoku h2 {
+  font-family: "Playfair Display", serif;
+  margin: 0 0 8px;
+}
+
+.d07sudoku .desc {
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.d07sudoku .board {
+  display: grid;
+  grid-template-columns: repeat(4, 50px);
+  grid-template-rows: repeat(4, 50px);
+  gap: 4px;
+  justify-content: center;
+  margin: 12px auto;
+}
+
+.d07sudoku .cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  background: #faf7f6;
+  user-select: none;
+}
+
+.d07sudoku .cell.prefilled {
+  background: #ddd;
+  cursor: default;
+}
+
+.d07sudoku .number-picker {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.d07sudoku .number-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  background: var(--accent-2);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+}
+
+.d07sudoku .number-btn:active {
+  transform: scale(0.95);
+}
+
+.d07sudoku .small {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+</style>
+
+<div class="d07sudoku" role="application">
+  <h2>Mini Sudoku</h2>
+  <div class="desc">Omple el Sudoku 4x4 amb números del 1 al 4 sense repetir files ni columnes.</div>
+  <div class="board" id="d07board"></div>
+  <div class="number-picker" id="d07picker"></div>
+  <div class="small">Al completar, veuràs la pista del dia 7.</div>
+</div>

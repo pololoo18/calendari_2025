@@ -1,0 +1,77 @@
+<style>
+  .d24 { text-align:center; font-family: "Playfair Display", serif; }
+  .d24 h2 { margin-bottom: 12px; }
+  .code-row { display:flex; justify-content:center; gap:12px; margin:20px auto; }
+  .code-piece {
+    width:60px; height:60px; border-radius:10px; background:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-size:28px; cursor:pointer; border:2px solid #cc0000;
+    transition:transform .15s;
+  }
+  .code-piece:hover { transform:scale(1.08); }
+  #result24 { margin-top:20px; min-height:220px; }
+  #result24 img { width:220px; }
+</style>
+
+<div class="d24">
+  <h2>Rompecódigo del Corazón</h2>
+  <p>Ordena las piezas para formar la secuencia correcta.</p>
+
+  <div class="code-row" id="row24"></div>
+
+  <button id="check24"
+    style="margin-top:18px;padding:8px 16px;border-radius:8px;
+    background:#e63946;color:white;border:none;cursor:pointer;font-size:16px;">
+    Comprobar
+  </button>
+
+  <div id="result24"></div>
+</div>
+
+<script>
+(() => {
+  // Código correcto
+  const TARGET = ["N", "P", "❤", "!"];
+
+  // Piezas mezcladas
+  let pieces = ["P", "N", "!", "❤"];
+
+  const row = document.getElementById("row24");
+  const result = document.getElementById("result24");
+
+  function render() {
+    row.innerHTML = "";
+    pieces.forEach((p, i) => {
+      const el = document.createElement("div");
+      el.className = "code-piece";
+      el.innerText = p;
+
+      // Al hacer clic, intercambia con la pieza siguiente
+      el.onclick = () => {
+        const next = (i + 1) % pieces.length;
+        [pieces[i], pieces[next]] = [pieces[next], pieces[i]];
+        render();
+      };
+
+      row.appendChild(el);
+    });
+  }
+
+  document.getElementById("check24").onclick = () => {
+    if (pieces.join("") === TARGET.join("")) {
+      result.innerHTML = `
+        <h3 style="color:#d62828;">¡Perfecto! ❤️</h3>
+        <p>Has descubierto el mensaje final.</p>
+        <img src="./heart.png" alt="corazón">
+      `;
+      // Final Advent
+      if (window.__adv && window.__adv.finish)
+        window.__adv.finish();
+    } else {
+      result.innerHTML = `<p style="color:#555;">No es correcto aún… ¡Prueba a seguir ordenando!</p>`;
+    }
+  };
+
+  render();
+})();
+</script>

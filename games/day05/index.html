@@ -1,0 +1,55 @@
+<style>
+.d05puzzle {
+  font-family: inherit;
+  color: var(--text);
+  text-align: center;
+}
+
+.d05puzzle h2 {
+  font-family: "Playfair Display", serif;
+  margin: 0 0 8px;
+}
+
+.d05puzzle .desc {
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.d05puzzle .board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 4px;
+  justify-content: center;
+  margin: 18px auto;
+}
+
+.d05puzzle .piece {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  transition: transform 0.15s;
+}
+
+.d05puzzle .piece:active {
+  transform: scale(0.95);
+}
+
+.d05puzzle .small {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+</style>
+
+<div class="d05puzzle" role="application">
+  <h2>Puzzle</h2>
+  <div class="desc">Ordena les peces per reconstruir la imatge. Fes clic en dues peces per intercambiarles.</div>
+  <div class="board" id="d05board"></div>
+  <div class="small">Al completar el puzzle, veuras la pista del dia 5.</div>
+</div>

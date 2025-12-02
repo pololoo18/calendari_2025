@@ -1,0 +1,60 @@
+<style>
+.d12find {
+  font-family: inherit;
+  color: var(--text);
+  text-align: center;
+}
+
+.d12find h2 {
+  font-family: "Playfair Display", serif;
+  margin: 0 0 8px;
+}
+
+.d12find .desc {
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.d12find .info {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.d12find .board {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+  gap: 8px;
+  justify-content: center;
+  margin: 12px auto;
+}
+
+.d12find .cell {
+  width: 80px;
+  height: 80px;
+  background: #faf7f6;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 36px;
+}
+
+.d12find .small {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+</style>
+
+<div class="d12find">
+  <h2>Troba els Rudolphs</h2>
+  <div class="desc">Fes clic a les caselles per descobrir on són els Rudolphs.</div>
+  <div class="info">
+    Vides: <span id="d12lives">3</span> | 
+    Trobats: <span id="d12count">0</span>/3
+  </div>
+  <div class="board" id="d12board"></div>
+</div>

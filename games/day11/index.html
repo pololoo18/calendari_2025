@@ -1,0 +1,62 @@
+<style>
+.d11whack {
+  font-family: inherit;
+  color: var(--text);
+  text-align: center;
+}
+
+.d11whack h2 {
+  font-family: "Playfair Display", serif;
+  margin: 0 0 8px;
+}
+
+.d11whack .desc {
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.d11whack .info {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.d11whack .board {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 12px auto;
+  background: #eef6ff;
+  border: 2px solid #ccc;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.d11whack .hole {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: #faf7f6;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.d11whack .small {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+</style>
+
+<div class="d11whack">
+  <h2>Topitos</h2>
+  <div class="desc">Fes clic en els regals abans que desapareixin.</div>
+  <div class="info">Punts: <span id="d11score">0</span> / <span id="d11goal">10</span></div>
+  <div class="board" id="d11board"></div>
+  <div class="small">A l'arribar a la puntuació, veuràs la pista del dia 11.</div>
+</div>

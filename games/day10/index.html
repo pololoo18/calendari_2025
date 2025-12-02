@@ -1,0 +1,74 @@
+<style>
+.d10breakout {
+  font-family: inherit;
+  color: var(--text);
+  text-align: center;
+}
+
+.d10breakout h2 {
+  font-family: "Playfair Display", serif;
+  margin: 0 0 8px;
+}
+
+.d10breakout .desc {
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.d10breakout .info {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.d10breakout .board {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 12px auto;
+  border: 2px solid #ccc;
+  background: #faf7f6;
+  overflow: hidden;
+}
+
+.d10breakout .paddle {
+  position: absolute;
+  bottom: 10px;
+  width: 60px;
+  height: 12px;
+  background: var(--accent-2);
+  border-radius: 6px;
+}
+
+.d10breakout .ball {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ff4d4d;
+}
+
+.d10breakout .brick {
+  position: absolute;
+  width: 60px;
+  height: 20px;
+  background: #444;
+  border-radius: 4px;
+}
+
+.d10breakout .small {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+</style>
+
+<div class="d10breakout">
+  <h2>Breakout</h2>
+  <div class="desc">Destrueix tots los bricks movent la pala.</div>
+  <div class="info">Bricks restants: <span id="d10score">0</span></div>
+  <div class="board" id="d10board">
+    <div class="paddle" id="d10paddle"></div>
+    <div class="ball" id="d10ball"></div>
+  </div>
+  <div class="small">Al destruir tots els bricks, veuràs la pista del dia 10.</div>
+</div>

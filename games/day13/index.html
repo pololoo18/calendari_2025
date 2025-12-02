@@ -1,0 +1,64 @@
+<style>
+.d13tetris {
+  font-family: inherit;
+  color: var(--text);
+  text-align: center;
+}
+
+.d13tetris h2 {
+  font-family: "Playfair Display", serif;
+  margin: 0 0 8px;
+}
+
+.d13tetris .desc {
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.d13tetris .info {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.d13tetris .board {
+  position: relative;
+  width: 200px;
+  height: 400px;
+  margin: 12px auto;
+  background: #faf7f6;
+  border: 2px solid #ccc;
+  display: grid;
+  grid-template-columns: repeat(10, 20px);
+  grid-template-rows: repeat(20, 20px);
+}
+
+.d13tetris .cell {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+.d13tetris .active {
+  background: var(--accent-2);
+}
+
+.d13tetris .small {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.d13tetris .cell.fixed {
+  background: #ff6666; /* color de pieza fija */
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+</style>
+
+<div class="d13tetris">
+  <h2>Tetrix</h2>
+  <div class="desc">Mou les peces i completa files per guanyar.</div>
+  <div class="info">Punts: <span id="d13score">0</span> / 5</div>
+  <div class="board" id="d13board"></div>
+</div>
