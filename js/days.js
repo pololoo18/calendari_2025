@@ -1,9 +1,9 @@
 // Configuración simple de los días: título corto + ruta relativa al juego
 // Rellena o modifica los campos "title" y "gamePath" según vayas creando /games/dayXX/
 export const DAYS = {
-  1: { title: "Memory", gamePath: "games/day01/index.html", hint: "Val per un massatge" },
-  2: { title: "Laberint",    gamePath: "games/day02/index.html", hint: "Mira la butxaca petita de la meva motxilla" },
-  3: { title: "Copitos",      gamePath: "games/day03/index.html", hint: "---" },
+  1: { title: "Memory", gamePath: "games/day01/index.html", hint: "🎟️ x 1 - Massatge de 10 minuts" },
+  2: { title: "Trivial",    gamePath: "games/day02/index.html", hint: "Mira la butxaca petita de la meva motxilla" },
+  3: { title: "Copitos",      gamePath: "games/day03/index.html", hint: " 🎟️ x 1 - Dia de cine (avui es bon dia...)" },
   4: { title: "Salturriento",      gamePath: "games/day04/index.html", hint: "---" },
   5: { title: "Puzzle",      gamePath: "games/day05/index.html", hint: "---" },
   6: { title: "Simon",      gamePath: "games/day06/index.html", hint: "---" },
@@ -17,7 +17,7 @@ export const DAYS = {
   14: { title: "TODO",      gamePath: "games/day14/index.html", hint: "---" },
   15: { title: "Carta",      gamePath: "games/day15/index.html", hint: "---" },
   16: { title: "TODO",      gamePath: "games/day16/index.html", hint: "---" },
-  17: { title: "Trivial",      gamePath: "games/day17/index.html", hint: "---" },
+  17: { title: "Laberint",      gamePath: "games/day17/index.html", hint: "---" },
   18: { title: "TODO",      gamePath: "games/day18/index.html", hint: "---" },
   19: { title: "Trencaneu",      gamePath: "games/day19/index.html", hint: "---" },
   20: { title: "Sopa",      gamePath: "games/day20/index.html", hint: "---" },

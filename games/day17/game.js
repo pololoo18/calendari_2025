@@ -1,61 +1,133 @@
-// Day17 trivia
-(() => {
-  const qs = [
-    {q:'De quina marca és mi moto?', opts:['Macbar','Macbor','Mocbor','Mocbar'], a:1},
-    {q:'Millor plan?', opts:['Peli','Viaje','Cenita','Totes'], a:3},
-    {q:'Quin està més rico?', opts:['Kinder','Oreo','Dinosaurus','Tú'], a:3},
-    {q:'Qui és el bebé más gordo del mundo?', opts:['Tú (Pelele)','Yo (Polele)', 'Losh dosh'], a:2},
-    {q:'Quina és LA nostra cançó?', opts:['Carry You Home - Alex Warren', 'Lienzo - Seastian Yatra', 'Ordinary - Alex Warren'], a:0},
-    {q:'Quant t\'estimo?', opts:['Mucho','Mucho Mucho','Mucho infinito','Muchisimo infinito i más allá, ets l\'amor de la meva vida🩵'], a:3}
-  ];
+// archivo cargado como module por main.js
+// al completarse debe llamar a window.__adv.finish({hint:"..."})
 
-  let idx = 0;
-  const qEl = document.getElementById('q17');
-  const opts = document.getElementById('opts17');
+// 0 = pared, 1 = camino, K = key, D = puerta, G = goal
+const layout = [
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,1,1,1,1,0,0,1,1,1,0,1,1,1,1,1,0,1,1,0],
+[0,0,0,0,1,0,0,1,0,1,0,1,0,0,0,1,0,1,0,0],
+[0,1,1,0,1,1,1,1,0,1,1,1,0,1,0,1,0,1,1,0],
+[0,1,0,0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,1,0],
+[0,1,0,1,1,1,0,1,1,1,0,1,1,1,1,1,1,0,1,0],
+[0,1,0,1,0,1,0,0,0,1,0,0,0,0,0,0,1,0,1,0],
+[0,1,1,1,0,1,1,1,0,1,1,1,1,1,1,0,1,1,1,0],
+[0,0,0,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,1,0],
+[0,1,1,1,1,1,0,1,1,1,0,1,1,0,1,1,1,0,1,0],
+[0,1,0,0,0,1,0,0,0,1,0,1,0,0,1,0,0,0,1,0],
+[0,1,1,1,0,1,1,1,0,'K',0,1,1,1,1,0,1,1,1,0],
+[0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,'D',0,0,0],
+[0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,'G',0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+];
 
-  function render() {
-    qEl.innerText = qs[idx].q;
-    opts.innerHTML = '';
 
-    qs[idx].opts.forEach((o, i) => {
-      const b = document.createElement('button');
-      b.className = 'btn';
-      b.innerText = o;
 
-      b.onclick = () => {
-        // Correcta
-        if (i === qs[idx].a) {
-          b.innerText = '💖';
-          b.style.background = '#ffe6ef';
+// posición inicial
+let px = 1, py = 1;
 
-          setTimeout(() => {
-            idx++;
-            if (idx >= qs.length) {
-              if (window.__adv && window.__adv.finish)
-                window.__adv.finish();
-            } else {
-              render();
-            }
-          }, 500);
+// estados
+let hasKey = false;
 
-        // Incorrecta
-        } else {
-          b.innerText = '❌';
-          b.style.background = '#fdd';
-          b.style.borderColor = '#f99';
+const maze = document.getElementById('d04maze');
 
-          // Reset para permitir otro intento
-          setTimeout(() => {
-            b.innerText = o;
-            b.style.background = '';
-            b.style.borderColor = '';
-          }, 650);
-        }
-      };
+function draw(){
+  maze.innerHTML = '';
+  layout.forEach((row, y)=>{
+    row.forEach((cell, x)=>{
+      const div = document.createElement('div');
+      div.classList.add('cell');
 
-      opts.appendChild(b);
+      if(cell === 0) div.classList.add('wall');
+      else if(cell === 1) div.classList.add('path');
+      else if(cell === 'G') div.classList.add('goal');
+      else if(cell === 'D') div.classList.add('door');
+      else if(cell === 'K') div.classList.add('key');
+
+      if(x === px && y === py){
+        div.classList.add('player');
+        div.textContent = '🟦';
+      } else if(cell === 'G'){
+        div.textContent = '⭐';
+      } else if(cell === 'K'){
+        div.textContent = '🔑';
+      } else if(cell === 'D'){
+        div.textContent = '🚪';
+      }
+
+      // clic adyacente
+      div.addEventListener('click', () => tryClickMove(x, y));
+
+      maze.appendChild(div);
     });
+  });
+}
+
+function canMove(nx, ny){
+  const cell = layout[ny]?.[nx];
+  if(cell == null) return false;
+
+  if(cell === 0) return false;        // pared
+  if(cell === 'D' && !hasKey) return false; // puerta cerrada
+  return true;
+}
+
+function handleCell(nx, ny){
+  const cell = layout[ny][nx];
+
+  // recoger llave
+  if(cell === 'K'){
+    hasKey = true;
+    layout[ny][nx] = 1; // ahora es camino
   }
 
-  render();
-})();
+  // abrir puerta
+  if(cell === 'D' && hasKey){
+    layout[ny][nx] = 1;
+  }
+
+  // ganar
+  if(cell === 'G'){
+    finish();
+  }
+}
+
+function finish(){
+  setTimeout(()=>{
+    if(window.__adv?.finish){
+      window.__adv.finish();
+    }
+  }, 300);
+}
+
+function move(dx, dy){
+  const nx = px + dx;
+  const ny = py + dy;
+
+  if(!canMove(nx, ny)) return;
+
+  px = nx;
+  py = ny;
+
+  handleCell(nx, ny);
+  draw();
+}
+
+// teclado
+document.addEventListener('keydown', e=>{
+  if(e.key === 'ArrowUp') move(0,-1);
+  if(e.key === 'ArrowDown') move(0,1);
+  if(e.key === 'ArrowLeft') move(-1,0);
+  if(e.key === 'ArrowRight') move(1,0);
+});
+
+// clic en casilla adyacente
+function tryClickMove(x, y){
+  const dx = Math.abs(x - px);
+  const dy = Math.abs(y - py);
+
+  if((dx === 1 && dy === 0) || (dx === 0 && dy === 1)){
+    move(x - px, y - py);
+  }
+}
+
+draw();

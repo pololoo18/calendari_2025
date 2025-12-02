@@ -1,10 +1,32 @@
+<!-- Este HTML será inyectado dentro del overlay -->
 <style>
-  .d17 h2{font-family:"Playfair Display",serif}
-  .d17 .q{margin-top:10px}
-  .d17 .opts{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.d04 {font-family:inherit;color:var(--text)}
+.d04 h2{font-family:"Playfair Display",serif;margin:0 0 8px}
+.d04 .desc{color:var(--muted);margin-bottom:12px}
+.d04 .maze{
+  display:grid;
+  grid-template-columns:repeat(20,32px);
+  gap:4px;
+  justify-content:center;
+  margin-top:10px;
+}
+.d04 .cell{
+  width:32px;height:32px;border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;cursor:pointer;user-select:none;
+}
+.d04 .wall{background:#cfcccb}
+.d04 .path{background:#faf7f6;border:1px solid rgba(0,0,0,0.05)}
+.d04 .player{background:var(--accent-2);color:#fff}
+.d04 .goal{background:#ffe9a7}
+.d04 .door{background:#dabbbb}
+.d04 .key{background:#fff3c2}
+.d04 .small{margin-top:12px;color:var(--muted);font-size:13px;text-align:center}
 </style>
-<div class="d17">
-  <h2>Trivial</h2>
-  <div id="q17" class="q"></div>
-  <div id="opts17" class="opts"></div>
+
+<div class="d04" role="application">
+  <h2>Laberint</h2>
+  <div class="desc">Arriba a la ⭐, però abans has de trobar la 🔑 i obrir la porta.</div>
+  <div class="maze" id="d04maze"></div>
+  <div class="small">Al completar, veuràs la pista.</div>
 </div>
