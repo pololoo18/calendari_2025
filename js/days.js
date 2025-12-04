@@ -3,9 +3,9 @@
 export const DAYS = {
   1: { title: "Memory", gamePath: "games/day01/index.html", hint: "🎟️ x 1 - Massatge de 10 minuts" },
   2: { title: "Trivial",    gamePath: "games/day02/index.html", hint: "Mira la butxaca petita de la meva motxilla" },
-  3: { title: "Copitos",      gamePath: "games/day03/index.html", hint: " 🎟️ x 1 - Dia de cine (avui es bon dia...)" },
-  4: { title: "Salturriento",      gamePath: "games/day04/index.html", hint: "---" },
-  5: { title: "Puzzle",      gamePath: "games/day05/index.html", hint: "---" },
+  3: { title: "Copitos",      gamePath: "games/day03/index.html", hint: "🎟️ x 1 - Dia de cine (avui es bon dia...)" },
+  4: { title: "Salturriento",      gamePath: "games/day04/index.html", hint: "🎟️ x 5 - Intents per tu peluchito de Stitch navideño" },
+  5: { title: "Puzzle",      gamePath: "games/day05/index.html", hint: "🎟️ x 1 - Cita romàntica amb cenita, yo m'ocupo de tot (fecha sorpresa)" },
   6: { title: "Simon",      gamePath: "games/day06/index.html", hint: "---" },
   7: { title: "Sudoku",      gamePath: "games/day07/index.html", hint: "---" },
   8: { title: "Snake",      gamePath: "games/day08/index.html", hint: "---" },
