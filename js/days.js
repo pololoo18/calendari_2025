@@ -6,7 +6,7 @@ export const DAYS = {
   3: { title: "Copitos",      gamePath: "games/day03/index.html", hint: "🎟️ x 1 - Dia de cine (avui es bon dia...)" },
   4: { title: "Salturriento",      gamePath: "games/day04/index.html", hint: "🎟️ x 5 - Intents per tu peluchito de Stitch navideño" },
   5: { title: "Puzzle",      gamePath: "games/day05/index.html", hint: "🎟️ x 1 - Cita romàntica amb cenita, yo m'ocupo de tot (fecha sorpresa)" },
-  6: { title: "Simon",      gamePath: "games/day06/index.html", hint: "---" },
+  6: { title: "Simon",      gamePath: "games/day06/index.html", hint: "Hi ha algo amagat per la habitació, haurem de jugar a fio o caliente..." },
   7: { title: "Sudoku",      gamePath: "games/day07/index.html", hint: "---" },
   8: { title: "Snake",      gamePath: "games/day08/index.html", hint: "---" },
   9: { title: "Fotos en ordre",      gamePath: "games/day09/index.html", hint: "---" },
