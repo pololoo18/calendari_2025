@@ -10,7 +10,7 @@
     d.dataset.val = val;
 
     const img = document.createElement('img');
-    img.src = `games/day09/${val}.jpg`; // ruta de la imagen
+    img.src = `games/Fotos/${val}.jpg`; // ruta de la imagen
     img.alt = `${val}`;
     d.appendChild(img);
 

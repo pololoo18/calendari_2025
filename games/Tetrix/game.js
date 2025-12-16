@@ -4,7 +4,7 @@
   const cols = 10, rows = 20;
   let board = [];
   let score = 0;
-  const targetScore = 10;
+  const targetScore = 5;
   let gameOver = false;
 
   // crear tablero

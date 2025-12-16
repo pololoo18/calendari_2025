@@ -1,36 +1,11 @@
 <style>
-  .d20 h2{font-family:"Playfair Display",serif}
-  .d20 .grid{
-    display:grid;
-    grid-template-columns:repeat(10,36px);
-    gap:6px;
-    justify-content:center;
-    margin:12px auto;
-  }
-  .d20 .cell{
-    width:36px;height:36px;
-    border-radius:6px;
-    background:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    cursor:pointer;
-    font-weight:bold;
-    transition:0.2s;
-  }
-  .d20 .cell.marked{
-    background:#ffe3e3;
-  }
-  .d20 .cell.found{
-    background:#c9f7c5 !important;
-    cursor:default !important;
-  }
+  .d14 h2{font-family:"Playfair Display",serif}
+  .d14 .canvas{width:320px;height:220px;background:linear-gradient(180deg,#fff8f7,#fff3f1);border-radius:12px;margin:12px auto;position:relative}
+  .d14 .dot{width:12px;height:12px;border-radius:50%;background:#d9b8b3;position:absolute;cursor:pointer}
+  .d14 .small{color:var(--muted);text-align:center}
 </style>
-
-<div class="d20">
-  <h2>Sopa de Lletres</h2>
-  <div class="grid" id="grid20"></div>
-  <p style="text-align:center;color:var(--muted);margin-top:8px">
-    Troba: <b>POP</b>, <b>PUM</b>, <b>JUAN</b>, <b>JAIRO</b>
-  </p>
+<div class="d14">
+  <h2>Une los puntos</h2>
+  <div class="canvas" id="c14"></div>
+  <div class="small">Conecta los puntos para dibujar un corazón.</div>
 </div>

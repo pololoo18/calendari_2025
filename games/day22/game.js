@@ -1,24 +1,24 @@
-// Day22 pattern 4 icons
+// Day16 drag flowers
 (() => {
-  const icons = ['👶🏻','🏠','💙','🐶'].sort(()=>Math.random()-0.5);
-  const correct = ['💙','🏠','🐶','👶🏻']; // pattern to press
-  const pad = document.getElementById('pad22');
-  const seq = [];
-  icons.forEach(ic=>{
-    const b = document.createElement('button'); b.className='btnicon'; b.innerText = ic;
-    b.addEventListener('click', ()=> {
-      seq.push(ic);
-      b.style.opacity = '.5';
-      if(seq.length === correct.length){
-        if(seq.join('') === correct.join('')){
-          if(window.__adv && window.__adv.finish) window.__adv.finish();
-        } else {
-          alert('Casi però no amor, torna a provar 💫');
-          seq.length = 0;
-          document.querySelectorAll('.d22 .btnicon').forEach(x=> x.style.opacity = '1');
-        }
-      }
-    });
-    pad.appendChild(b);
+  const flowers = ['🌹','🌼','🌷'];
+  const tray = document.getElementById('tray16');
+  const vase = document.getElementById('vase16');
+  let placed = 0;
+  flowers.forEach((f,i)=>{
+    const el = document.createElement('div'); el.className='flower'; el.innerText = f;
+    el.draggable = true;
+    el.addEventListener('dragstart', e=> e.dataTransfer.setData('text/plain', f));
+    tray.appendChild(el);
+  });
+  vase.addEventListener('dragover', e=> e.preventDefault());
+  vase.addEventListener('drop', e=>{
+    e.preventDefault();
+    const v = e.dataTransfer.getData('text/plain');
+    const s = document.createElement('div'); s.style.margin='4px'; s.innerText = v;
+    vase.appendChild(s);
+    placed++;
+    if(placed >= 3){
+      if(window.__adv && window.__adv.finish) window.__adv.finish();
+    }
   });
 })();
