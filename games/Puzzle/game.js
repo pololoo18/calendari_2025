@@ -4,7 +4,7 @@ function setupPuzzleGame3x3() {
   const board = document.getElementById("d05board");
 
   // Imagen de ejemplo
-  const imageURL = "games/day05/heart.png"; 
+  const imageURL = "games/Puzzle/heart.png"; 
   const size = 3; // 3x3
   const pieceSize = 100; // cada pieza 100x100 px
   const pieces = [];
