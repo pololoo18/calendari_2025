@@ -1,0 +1,38 @@
+<style>
+.d24fireworks {
+  font-family: inherit;
+  color: var(--text);
+  text-align: center;
+  user-select: none;
+}
+
+.d24fireworks h2 {
+  font-family: "Playfair Display", serif;
+  margin: 0 0 8px;
+}
+
+.d24fireworks .desc {
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.d24fireworks .info {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.d24fireworks #fireCanvas {
+  display: block;
+  margin: 0 auto;
+  background: #000022;
+  border-radius: 8px;
+  cursor: pointer;
+}
+</style>
+
+<div class="d24fireworks">
+  <h2>Focs artificials de Nadal!</h2>
+  <div class="desc">Fes clic para llençar focs artificials.</div>
+  <div class="info">Focs realitzats: <span id="fireCount">0</span>/10</div>
+  <canvas id="fireCanvas" width="400" height="400"></canvas>
+</div>

@@ -19,12 +19,12 @@ export const DAYS = {
   16: { title: "Sopa",      gamePath: "games/Sopa/index.html", hint: "Busca a la caixa: U" },
   17: { title: "Trencaneu",      gamePath: "games/Trencaneu/index.html", hint: "Busca a la caixa: F" },
   18: { title: "Caixa",      gamePath: "games/Caixa/index.html", hint: "Busca a la caixa: A" },
-  19: { title: "Missatge",      gamePath: "games/Missatge/index.html", hint: "---" },
-  20: { title: "TODO",      gamePath: "games/day20/index.html", hint: "---" },
-  21: { title: "TODO",      gamePath: "games/day21/index.html", hint: "---" },
-  22: { title: "TODO",      gamePath: "games/day22/index.html", hint: "---" },
-  23: { title: "TODO",      gamePath: "games/day23/index.html", hint: "---" },
-  24: { title: "TODO",    gamePath: "games/day24/index.html", hint: "---" }
+  19: { title: "Missatge",      gamePath: "games/Missatge/index.html", hint: "Això es petit però pesa lo seu, sabries dir-me quant... PD: Potser podries mirar d'ajuntar totes les lletres dels regals anteriors no?" },
+  20: { title: "Rellotge",      gamePath: "games/Rellotge/index.html", hint: "19 mesos aguantant-te ja 🩵. Aquest regal està al calendari d'advent, però no precisament en aquest..." },
+  21: { title: "Ahorcado",      gamePath: "games/Ahorcado/index.html", hint: "Toca fer un xixin per cel·lebrar el Nadal, i ho haurem de fer amb una copa ben decorada..." },
+  22: { title: "Trilero",      gamePath: "games/Trilero/index.html", hint: "Como buena hache que ets, què és el més important?" },
+  23: { title: "Llums",      gamePath: "games/Llums/index.html", hint: "Tenim un arbre de Nadal ben xulu, però potser totes les boles de decoració no són el que semblen..." },
+  24: { title: "Focs",    gamePath: "games/Focs/index.html", hint: "Gràcies per ser tu, t'estimo! Mira sota l'arbre, BON NADAL🩵" }
 };
 
 // Configs globales

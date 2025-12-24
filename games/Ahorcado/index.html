@@ -1,0 +1,52 @@
+<style>
+  .dXX {
+    font-family: inherit;
+    text-align: center;
+    color: var(--text);
+  }
+  .dXX h2 {
+    font-family: "Playfair Display", serif;
+    margin-bottom: 6px;
+  }
+  .dXX .word {
+    font-size: 28px;
+    letter-spacing: 6px;
+    margin: 14px 0;
+  }
+  .dXX .letters {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .dXX .letters button {
+    padding: 6px 0;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: #faf6f5;
+    font-weight: 600;
+  }
+  .dXX .letters button.used {
+    opacity: 0.4;
+    cursor: default;
+  }
+  .dXX .status {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .dXX .hangman {
+    font-size: 22px;
+    margin-top: 6px;
+  }
+</style>
+
+<div class="dXX">
+  <h2>Ahorcado</h2>
+  <div class="hangman" id="hLives"></div>
+  <div class="word" id="hWord"></div>
+  <div class="letters" id="hLetters"></div>
+  <div class="status" id="hMsg"></div>
+</div>

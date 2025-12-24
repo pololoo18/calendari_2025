@@ -1,0 +1,47 @@
+<style>
+  .dXX {
+    font-family: inherit;
+    text-align: center;
+    color: var(--text);
+  }
+  .dXX h2 {
+    font-family: "Playfair Display", serif;
+    margin-bottom: 6px;
+  }
+  .dXX .table {
+    position: relative;
+    width: 260px;
+    height: 90px;
+    margin: 18px auto;
+  }
+  .dXX .cup {
+    position: absolute;
+    top: 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    background: #faf6f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    cursor: pointer;
+    transition: transform 0.45s ease;
+  }
+  .dXX .cup.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+  }
+  .dXX .msg {
+    font-size: 14px;
+    color: var(--muted);
+    min-height: 20px;
+  }
+</style>
+
+<div class="dXX">
+  <h2>On està el regal?</h2>
+  <div class="msg" id="tMsg">Observa bé…</div>
+  <div class="msg" id="tCount">Moviments: 6</div>
+  <div class="table" id="tTable"></div>
+</div>

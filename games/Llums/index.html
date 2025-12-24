@@ -1,0 +1,41 @@
+<style>
+  .dXX {
+    font-family: inherit;
+    text-align: center;
+    color: var(--text);
+  }
+  .dXX h2 {
+    font-family: "Playfair Display", serif;
+    margin-bottom: 6px;
+  }
+  .dXX .board {
+    display: grid;
+    grid-template-columns: repeat(3, 70px);
+    gap: 10px;
+    justify-content: center;
+    margin: 16px 0;
+  }
+  .dXX .cell {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    cursor: pointer;
+    background: #ddd;
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+  .dXX .cell.on {
+    background: #ffe066;
+    box-shadow: 0 0 12px rgba(255,224,102,0.8);
+  }
+  .dXX .msg {
+    font-size: 14px;
+    color: var(--muted);
+    min-height: 20px;
+  }
+</style>
+
+<div class="dXX">
+  <h2>Apaga els llums</h2>
+  <div class="msg" id="lMsg">Fes clic a les caselles per apagar el llum</div>
+  <div class="board" id="lBoard"></div>
+</div>
