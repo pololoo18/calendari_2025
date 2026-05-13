@@ -76,7 +76,11 @@ function isAccessible(day){
   // Solo desbloquear automáticamente si estamos en diciembre
   const currentDay = now.getDate();
   const currentMonth = now.getMonth() + 1; // 1 = enero ... 12 = diciembre
+  const currentYear = now.getFullYear();
 
+  if (currentYear !== 2025){
+    return true; // NO ES 2025
+  }
   if (currentMonth !== 12) {
     return false; // ❌ NO es diciembre → ningún día está accesible
   }
@@ -191,7 +195,7 @@ document.addEventListener('click', (ev)=>{
   if(box){
     const day = Number(box.dataset.day);
     if(ev.target && ev.target.dataset.action === 'open'){
-      if(!isAccessible(day) || (now.getMonth() + 1) !== 12){
+      if(!isAccessible(day)){
         // pedir código maestro
         const code = prompt("Encara no es el dia — introdueix el codi secret si vols obrirlo:");
         if(code && code.trim().toLowerCase() === CONFIG.secretCode.toLowerCase()){
