@@ -191,7 +191,7 @@ document.addEventListener('click', (ev)=>{
   if(box){
     const day = Number(box.dataset.day);
     if(ev.target && ev.target.dataset.action === 'open'){
-      if(!isAccessible(day)){
+      if(!isAccessible(day) || (now.getMonth() + 1) !== 12){
         // pedir código maestro
         const code = prompt("Encara no es el dia — introdueix el codi secret si vols obrirlo:");
         if(code && code.trim().toLowerCase() === CONFIG.secretCode.toLowerCase()){
